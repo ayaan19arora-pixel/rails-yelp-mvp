@@ -1,0 +1,11 @@
+<h1 class="text-3xl font-bold mb-6">Review <%= @restaurant.name %></h1>
+
+<div class="bg-white rounded-lg shadow p-6 max-w-lg">
+  <%= simple_form_for [@restaurant, @review] do |f| %>
+    <%= f.input :rating, collection: (0..5).to_a, include_blank: false, input_html: { class: "w-full border border-gray-300 rounded px-3 py-2" } %>
+    <%= f.input :content, as: :text, input_html: { class: "w-full border border-gray-300 rounded px-3 py-2", rows: 4 } %>
+    <%= f.button :submit, class: "bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 cursor-pointer" %>
+  <% end %>
+
+  <%= link_to "Back to restaurant", restaurant_path(@restaurant), class: "inline-block mt-4 text-blue-600 hover:underline" %>
+</div>

@@ -1,0 +1,7 @@
+<%= simple_form_for restaurant do |f| %>
+  <%= f.input :name, input_html: { class: "w-full border border-gray-300 rounded px-3 py-2" } %>
+  <%= f.input :address, input_html: { class: "w-full border border-gray-300 rounded px-3 py-2" } %>
+  <%= f.input :phone_number, input_html: { class: "w-full border border-gray-300 rounded px-3 py-2" } %>
+  <%= f.input :category, collection: Restaurant::CATEGORIES, include_blank: true, input_html: { class: "w-full border border-gray-300 rounded px-3 py-2" } %>
+  <%= f.button :submit, class: "bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 cursor-pointer" %>
+<% end %>
